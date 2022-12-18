@@ -7,6 +7,11 @@ ARG FIREFOX_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="thelamer"
 
+## CUSTOM TOR
+RUN apk add tor
+RUN chown -R tor /etc/tor
+## END CUSTOM TOR
+
 RUN \
   echo "**** install packages ****" && \
   if [ -z ${FIREFOX_VERSION+x} ]; then \
