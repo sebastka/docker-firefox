@@ -10,6 +10,7 @@ LABEL maintainer="thelamer"
 ## CUSTOM TOR
 RUN apk add tor
 RUN chown -R tor /etc/tor
+RUN tor &
 ## END CUSTOM TOR
 
 RUN \
